@@ -10,7 +10,7 @@ COPY ./package-lock.json /var/www/package-lock.json
 
 ENV NODE_ENV production
 
-HEALTHCHECK CMD wget --no-verbose --tries=1 --spider http://localhost/healthcheck || exit 1
+HEALTHCHECK CMD wget --no-verbose --tries=1 --spider http://localhost:9082/healthcheck || exit 1
 
 RUN npm install --omit-dev
 CMD npm start
